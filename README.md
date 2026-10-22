@@ -172,7 +172,6 @@ The tests use a fake robot, so no hardware or LeRobot install is needed.
 - The server does not manage the arm's torque when it exits. Do not assume the arm will hold or release its position; check this on your setup.
 - `config.json` is read once at startup: restart the server after changing limits or poses.
 - Movement tools carry MCP annotations (`destructiveHint`), so clients can ask for confirmation before moving the arm. Keep that confirmation enabled.
-- Tested on one SO-101 setup with LeRobot 0.6. Reports for other setups are welcome.
 
 ## License
 
