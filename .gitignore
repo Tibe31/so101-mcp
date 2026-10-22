@@ -1,0 +1,10 @@
+# Your own robot configuration (port, robot id, limits, poses)
+config.json
+
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/

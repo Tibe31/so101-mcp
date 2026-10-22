@@ -1,0 +1,18 @@
+{
+  "port": "COM_CHANGE_ME",
+  "robot_id": "YOUR_EXISTING_ID",
+  "max_step_degrees": 1.0,
+  "updates_per_second": 15,
+  "gripper": {"open": null, "closed": null},
+  "limits": {
+    "shoulder_pan": null,
+    "shoulder_lift": null,
+    "elbow_flex": null,
+    "wrist_flex": null,
+    "wrist_roll": null,
+    "gripper": null
+  },
+  "poses": {
+    "rest": {}
+  }
+}

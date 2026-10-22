@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "so101-mcp"
+version = "0.1.0"
+description = "MCP server to control a SO-101 (SO-ARM101) robot arm from any MCP client, with per-joint safety limits, via LeRobot"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+keywords = ["mcp", "robotics", "so-101", "so-arm101", "lerobot", "cursor"]
+dependencies = [
+    "mcp>=1.9,<2",
+]
+
+[project.optional-dependencies]
+# Hardware support. Kept optional so the tests and tooling stay lightweight.
+robot = [
+    "lerobot[feetech]>=0.6",
+]
+
+[project.scripts]
+so101-mcp = "so101_mcp.server:main"
+so101-limits = "so101_mcp.limits:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/so101_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
