@@ -1,5 +1,11 @@
 # so101-mcp
 
+[![CI](https://github.com/Tibe31/so101-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Tibe31/so101-mcp/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+![Asking Cursor to open and close the gripper of a SO-101 arm through so101-mcp](docs/demo.gif)
+
+*Cursor asks the arm, through so101-mcp, to open and close the gripper.*
+
 An [MCP](https://modelcontextprotocol.io) server that lets an AI assistant in any MCP client (Claude Code, Claude Desktop, Cursor, VS Code, ...) move a **SO-101 / SO-ARM101** robot arm, with per-joint safety limits. It talks to the arm through your existing [LeRobot](https://github.com/huggingface/lerobot) installation and calibration.
 
 > **Safety first.** This software moves a real robot. It checks every target against per-joint limits and moves in small, bounded steps, but it does **not** detect collisions between links, with the table, or with people. Keep the work area clear, keep a hand on the power supply, and never run it with anyone near the arm. Use at your own risk (see the license).
