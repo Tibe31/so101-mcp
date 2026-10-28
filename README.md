@@ -153,6 +153,19 @@ Only one client at a time can hold the arm's serial port: close LeLab, LeRobot s
 
 Then ask things like "read the robot state", "rotate joint 1 left by 30 degrees" or "go to the rest pose".
 
+## Agent skill (optional)
+
+[`skills/so101-robot/SKILL.md`](skills/so101-robot/SKILL.md) is a skill file that teaches an agent when and how to use these tools safely: read the state first, start with small moves, never get around a refused limit, stop on anything unexpected. The MCP server works without it, but it makes the agent's behavior more careful.
+
+To use it with Claude Code, copy the folder into your skills directory:
+
+```bash
+cp -r skills/so101-robot ~/.claude/skills/        # all projects
+# or: cp -r skills/so101-robot .claude/skills/    # this project only
+```
+
+Other agents that read `SKILL.md` files can use the same folder; check where your client looks for skills.
+
 ## Troubleshooting
 
 - **`Access is denied` / `ClearCommError` on the port**: another program holds the serial port (LeLab, a LeRobot script, another MCP client). Close it, or replug the USB cable, then restart the server.
